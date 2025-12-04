@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Nested if else are used when we want to apply condition inside a condition
+        let age = parseInt(prompt("Enter your age : " ));
+        let gender = prompt("enter your gender");
+
+        if(age >= 18){
+            if(gender == "male"){
+                document.write("you can vote");
+            }
+            else{
+                document.write("Visit voter id center");
+            }
+        }
+        else{
+            document.write("you cannot vote");
+        }
+    </script>
+</body>
+</html>
