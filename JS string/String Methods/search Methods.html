@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "Dev Raghuwanshi";
+        let length = str.length;
+        console.log(length);
+
+
+        // indexOf(value): Returns first index of value (or -1 if not found).
+        let indexOf = str.indexOf("u");
+        console.log(indexOf);
+         
+
+        // last index = str.length - 1;
+        // last character = str[str.length - 1]
+
+        // lastIndexOf(value): Returns last index of value.
+        let lastIndexOf = str.lastIndexOf("u");
+        console.log(lastIndexOf);
+
+        // includes(value): Checks if string contains value (true/false).
+        let includes = str.includes("Dev");
+        console.log(includes);
+
+        // startsWith(value): Checks if string starts with given value.
+        let startsWith = str.startsWith("dev");
+        console.log(startsWith);
+
+        // endsWith(value): Checks if string ends with given value.
+        let endsWith = str.endsWith("patel");
+        console.log(endsWith);
+
+        // search() : searches a string for a string (or a regular expression) and returns the position of the match.
+        let str1 = "my name is dev raghuwanshi"
+        console.log(str1.search("dev"));
+
+        // match(regexp) : returns an array containing the results of matching a string against a string (or a regular expression)
+        console.log(str1.match("ev"));
+
+
+    </script>
+</body>
+</html>

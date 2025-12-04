@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // A string index is the position number of each character in a string
+        // +String index order -> 0  ,  1  ,  2  ,  3  , ..........So On
+        // -String index order -> So On............. -3  ,  -2  ,  -1 
+        let str = "Dev Raghuwanshi";
+
+
+        // str[index] → get a character by index.
+        console.log(str[0]);
+        console.log(str[1]);
+        console.log(str[2]);
+        console.log(str[3]);
+
+        // This gives undefined because JavaScript does not support negative indexing for strings (or arrays).
+            console.log(str[-1]);
+            console.log(str[-2]);
+            console.log(str[-3]);
+        // Using .at() we can acess -ve string index.
+        console.log(str.at(-1));
+        console.log(str.at(-2));
+        console.log(str.at(-3));
+        
+ 
+        //  str.indexOf("char") → find the index of a character/substring.   
+        console.log(str.indexOf("D"));
+        console.log(str.indexOf("u"));
+        console.log(str.indexOf("h"));
+        console.log(str.indexOf(" "));
+        console.log(str.indexOf("e"));
+
+
+        // str.lastIndexOf("char") → find last occurrence.
+        console.log(str.lastIndexOf("D"));
+        console.log(str.lastIndexOf("u"));
+        console.log(str.lastIndexOf("h"));
+        console.log(str.lastIndexOf(" "));
+        console.log(str.lastIndexOf("e"));
+
+    </script>
+</body>
+</html>
