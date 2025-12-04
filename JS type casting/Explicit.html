@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Explicit Type Casting is done by developers
+        let num = "90.5";
+        console.log(typeof num);
+        console.log(num);
+
+        num = parseFloat(num);
+        console.log(typeof num);
+        console.log(num + 1);
+
+        num = parseInt(num);
+        console.log(typeof num);
+        console.log(num +1);
+
+        let a = Number("123");
+        console.log(typeof a);
+        console.log(a);
+
+        let b = String(123);
+        console.log(typeof b);
+        console.log(b);
+
+        let c = Number(true);
+        let d = Number(false);
+        console.log(typeof c);
+        console.log(typeof d);
+        console.log(`${c} and ${d}`);
+        
+        let x = Boolean(0);
+        let y = Boolean(5);
+        console.log(typeof x);
+        console.log(typeof y);
+        console.log(`${x} and ${y}`);
+
+
+    </script>
+</body>
+</html>
