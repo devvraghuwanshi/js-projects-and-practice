@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    🔹 Definition
+
+The splice() method changes the contents of an array by removing, replacing, or adding elements at a specific index.
+
+It modifies the original array.
+
+Returns an array containing the removed elements (if any).
+
+     🔹 Syntax
+
+array.splice(start, deleteCount, item1, item2, ..., itemN)
+
+
+start (required): Index at which to start changing the array. If negative, counts from the end of the array.
+
+deleteCount (optional): Number of elements to remove starting from start.If 0 → no elements are removed.
+
+item1, item2, … (optional): Elements to add at position start. -->
+    <script>
+       let  arr = [1,2,3,4,5];
+       let x = arr.splice(1,2,7,8);
+       console.log(x);
+       console.log(arr);
+    </script>
+</body>
+</html>

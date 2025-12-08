@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    Array.from() is a static method that creates a new shallow-copied array from:
+    An array-like object (e.g., arguments, NodeList, string), or An iterable object (e.g., Set, Map). -->
+
+    <!-- Array.from(arrayLike, mapFn, thisArg) -->
+<!--
+    arrayLike → An array-like or iterable object to convert into an array.
+
+    mapFn (optional) → A function to apply to each element before adding it to the array.
+
+    thisArg (optional) → Value to use as this when executing mapFn. 
+-->
+    <script>
+      let str = "Dev Raghuwanshi";
+
+      let a = Array.from(str);
+      console.log(a);
+    </script>
+  </body>
+</html>
