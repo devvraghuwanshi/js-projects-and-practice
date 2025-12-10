@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CoffeeMachine{
+            #boilWater(){
+                console.log("Boiling water");
+            }
+            #mixIngredients(){
+                console.log("Mixing Ingredients");
+            }
+
+            makeCoffee(){
+                this.#boilWater();
+                this.#mixIngredients();
+                console.log("Coffee Ready......");
+            }
+        }
+        let c = new CoffeeMachine();
+        c.makeCoffee();
+    </script>
+</body>
+</html>

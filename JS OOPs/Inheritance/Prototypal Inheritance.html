@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Parent object
+        let person = {
+            greet(){
+                console.log("Hello!");
+            }
+        };
+
+        // child object inheriting from parent object.
+        let student = Object.create(person);
+        student.study = function(){
+            console.log("I am studying");
+        }
+        student.greet();
+        student.study();
+
+    </script>
+</body>
+</html>

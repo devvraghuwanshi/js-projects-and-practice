@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class BankAccount{
+            #balance = 0; //Private field.
+
+            deposite(amount){
+                this.#balance += amount;
+            }
+            getBalance(){
+                return `balance : $ ${this.#balance}`;
+            }
+        }
+        let acc = new BankAccount();
+        acc.deposite(500);
+        console.log(acc.getBalance());
+        // console.log(acc.#balance);       //this gives error
+
+    </script>
+</body>
+</html>

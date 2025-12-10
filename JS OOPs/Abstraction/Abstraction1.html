@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CoffeeMachine{
+            start(){
+                this.#grindBeans();
+                console.log(`Brewing coffee.....`);
+            }
+            #grindBeans(){
+                console.log(`Grinding Beans`);
+            }
+        }
+        let machine = new CoffeeMachine();
+        machine.start();
+        //machine.#grindBeans();           //not accessible
+    </script>
+</body>
+</html>

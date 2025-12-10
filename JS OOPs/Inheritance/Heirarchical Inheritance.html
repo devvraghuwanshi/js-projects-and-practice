@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            speak(){
+                console.log("Animal speaks");
+            }
+        }
+        class Dog extends Animal{
+            barks(){
+                console.log("Dog barks");
+            }
+        }
+        class Cat extends Animal{
+            meow(){
+                console.log("Cat meows");
+            }
+        }
+        let dog = new Dog();
+        dog.speak();
+        dog.barks();
+
+        let cat = new Cat();
+        cat.speak();
+        cat.meow();
+    </script>
+</body>
+</html>

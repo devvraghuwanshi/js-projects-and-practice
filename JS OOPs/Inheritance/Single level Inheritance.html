@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Parent class
+      class NokiaKeypad {
+        callin() {
+          console.log("Calling....");
+        }
+        message() {
+          console.log("Messaging.....");
+        }
+      }
+      class NokiaSmartPhone extends NokiaKeypad {
+        camera() {
+          console.log("Taking photo....");
+        }
+      }
+      let obj = new NokiaSmartPhone();
+      obj.camera();
+      obj.callin();
+      obj.message();
+    </script>
+  </body>
+</html>

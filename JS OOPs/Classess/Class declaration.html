@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            //A constructor is a special method used to create and initialize an object created within a class.
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            greet(){
+                return `Hello, i am ${this.name},${this.age} years old`;
+            }
+        }
+        let p1 = new Person("Dev",20);
+        console.log(p1);
+    </script>
+</body>
+</html>

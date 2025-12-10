@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS doesnt support multiplr inheritance directily(a class cant extend two classes).
+        // But we can mimic using mixins.
+        let canFly = {
+            fly(){
+                console.log("Can FLy");
+            }
+        };
+        let canSwim = {
+            swim(){
+                console.log("Can Swim");
+            }
+        };
+        class Animal{}
+
+        Object.assign(Animal.prototype,canFly,canSwim);
+
+        let bird = new Animal();
+        bird.Swim();
+        bird.fly();
+
+    </script>
+</body>
+</html>

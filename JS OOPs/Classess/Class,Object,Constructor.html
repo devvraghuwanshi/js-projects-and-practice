@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car{
+            constructor(brandName, price){
+                this.brandName = brandName;
+                this.price = price;
+            }
+            displayInfo(){
+                document.write(`Brand Name is ${this.brandName}<br>`);
+                document.write(`price is ${this.price}<br>`);
+            }
+        }
+
+        let obj1 = new Car("Audi",1800000);
+        obj1.displayInfo();
+        let obj2 = new Car("mercedes",190000000);
+        obj2.displayInfo();
+    </script>
+</body>
+</html>
