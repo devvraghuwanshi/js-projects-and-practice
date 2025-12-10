@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Callback function = function passed as argument to another function.
+      // Allows code to be executed later or after some operation is done.
+
+      function fun1(name, fun2) {
+            document.write("Welcome ", name);
+            fun2(); // calling
+        }
+
+      function fun2() {
+            document.write("<br>Bye!");
+        }
+
+        fun1("Vishal", fun2);
+    </script>
+  </body>
+</html>
