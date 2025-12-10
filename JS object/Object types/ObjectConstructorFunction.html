@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(first,last,age,eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eye = eye;
+        }
+
+        let myFather = new Person("Arvind","Singh Raghuwanshi", 50,"black");
+        let myMother = new Person("Radha","raghuwanshi",48,"black");
+        let mySister = new Person("Diksha","Raghuwanshi",25,"black");
+        let mySelf = new Person("Dev","Raghuwanshi",20,"black");
+
+
+        console.log(mySelf);
+        
+        console.log(mySelf.firstName + " is " + mySelf.age + " years old " + " and its eye colour is " + mySelf.eye);
+
+
+    </script>
+</body>
+</html>

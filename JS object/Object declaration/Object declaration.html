@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Object declaration using object literals
+        let student = {
+            Name : "Dev",                          //Property
+            Branch : "bTech",                      //Property
+            Grade : function(){                    //Method
+                        console.log("Passed");
+            }
+        };
+
+
+        // Object declaration using new keyword
+        let person = new Object({
+            firstName : "dev",
+            lastName : "Raghuwanshi",
+            age : 50,
+            eyeColour : "black"
+        });
+
+
+        // Displaying Object
+        let stu = student;
+        let per = person;
+        console.log(stu);
+        console.log(per);
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.create(proto) : Creates a new object with specified  prototype.
+        let person = {greet(){return "helloo!";}};
+        let student1 = Object.create(person);
+        console.log(student1.greet());
+    </script>
+</body>
+</html>

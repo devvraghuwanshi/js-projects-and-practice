@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person =  {
+            firstName : "dev",
+            lastName : "Raghuwanshi",
+            age : 50,
+            eyeColour : "black"
+        };
+
+        // Acessing object properties
+        let age = person.age;
+        let firstName = person.firstName;
+        let lastName = person["lastName"];
+        console.log(age);
+        console.log(firstName);
+        console.log(lastName);
+
+        // Displaying object properties
+        console.log(person.firstName + " is " + person.age + " years old. ");
+
+        // Adding new property
+        person.nationality = "Indian";
+        console.log(person);
+
+        // Deleting property
+        delete person.age;
+        console.log(person);
+    </script>
+</body>
+</html>
