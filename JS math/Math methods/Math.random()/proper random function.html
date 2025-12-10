@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Returns random integer between min(included) and max(excluded)
+        function getRndInteger(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        }
+        // Returns random integer between min(included) and max (included)
+        function getRandomInteger(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        console.log(getRndInteger(0,10));
+        console.log(getRandomInteger(0,10));
+    </script>
+</body>
+</html>
