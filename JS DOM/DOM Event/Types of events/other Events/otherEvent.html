@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Input Events Example</title>
+
+    <style>
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            width: 300px;
+            border: 2px solid black;
+            font-family: Arial, sans-serif;
+            border-radius: 8px;
+        }
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>All Event Details in One Example</h2>
+
+    <input type="text" id="keyInput" placeholder="Press any key here">
+
+    <div id="output">Event details will appear here...</div>
+
+    <script>
+
+        const out = document.getElementById("output");
+
+        // Keydown event → keycode
+        document.getElementById("keyInput").addEventListener("keydown", function(event) {
+            out.innerHTML =
+                `<b>Event Type:</b> ${event.type} <br>
+                 <b>Key Pressed:</b> ${event.key} <br>
+                 <b>Keycode:</b> ${event.keyCode}`;
+        });
+
+        // Mouse click → show coordinates + shift key
+        document.addEventListener("click", function(event) {
+            out.innerHTML =
+                `<b>Event Type:</b> ${event.type} <br>
+                 <b>ClientX:</b> ${event.clientX} <br>
+                 <b>ClientY:</b> ${event.clientY} <br>
+                 <b>ScreenX:</b> ${event.screenX} <br>
+                 <b>ScreenY:</b> ${event.screenY} <br>
+                 <b>Shift Key Pressed?:</b> ${event.shiftKey}`;
+        });
+
+    </script>
+
+</body>
+</html>

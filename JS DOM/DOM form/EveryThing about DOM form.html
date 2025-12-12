@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Forms Full Guide With Labels</title>
+</head>
+<body>
+
+<h1>DOM Forms — All Important Concepts (With Labels)</h1>
+
+<!-- ============================= -->
+<!-- 1. BASIC FORM -->
+<!-- ============================= -->
+<h2>1. Accessing Form & Inputs</h2>
+
+<form id="myForm">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput"><br><br>
+
+    <label for="ageInput">Age:</label>
+    <input type="number" id="ageInput"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p id="output1"></p>
+
+<script>
+const form = document.getElementById("myForm");
+const nameInput = document.getElementById("nameInput");
+const ageInput = document.getElementById("ageInput");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    output1.innerText = "Name: " + nameInput.value + ", Age: " + ageInput.value;
+});
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 2. FORM FIELD EVENTS -->
+<!-- ============================= -->
+<h2>2. Form Field Events (input, change, focus, blur)</h2>
+
+<label for="liveInput">Live Typing:</label>
+<input type="text" id="liveInput" placeholder="Type here...">
+<p id="liveOutput"></p>
+
+<script>
+liveInput.addEventListener("input", function() {
+    liveOutput.innerText = "You typed: " + this.value;
+});
+</script>
+
+<hr>
+
+
+<h3>Change Event</h3>
+
+<label for="changeInput">Change Event Input:</label>
+<input type="text" id="changeInput" placeholder="Type then click outside">
+<p id="changeOutput"></p>
+
+<script>
+changeInput.addEventListener("change", function() {
+    changeOutput.innerText = "Change event: " + this.value;
+});
+</script>
+
+<hr>
+
+
+<h3>Focus & Blur</h3>
+
+<label for="focusInput">Focus Input:</label>
+<input type="text" id="focusInput" placeholder="Focus here">
+
+<script>
+focusInput.addEventListener("focus", () => console.log("Input Focused"));
+focusInput.addEventListener("blur", () => console.log("Input Lost Focus"));
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 3. CHECKBOX & RADIO -->
+<!-- ============================= -->
+<h2>3. Checkbox & Radio Buttons</h2>
+
+<h3>Checkbox</h3>
+
+<label for="subscribe">Subscribe:</label>
+<input type="checkbox" id="subscribe"><br><br>
+
+<button onclick="checkStatus()">Check Status</button>
+<p id="checkOut"></p>
+
+<script>
+function checkStatus() {
+    checkOut.innerText = subscribe.checked
+        ? "Checkbox: Checked"
+        : "Checkbox: Not Checked";
+}
+</script>
+
+<hr>
+
+<h3>Radio Buttons</h3>
+
+<label>Gender:</label><br>
+
+<label><input type="radio" name="gender" value="Male"> Male</label><br>
+<label><input type="radio" name="gender" value="Female"> Female</label><br>
+<label><input type="radio" name="gender" value="Other"> Other</label><br><br>
+
+<button onclick="checkGender()">Check Gender</button>
+<p id="genderOut"></p>
+
+<script>
+function checkGender() {
+    const options = document.getElementsByName("gender");
+    let selected = "";
+    for (let opt of options) {
+        if (opt.checked) selected = opt.value;
+    }
+    genderOut.innerText = "Selected Gender: " + selected;
+}
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 4. SELECT DROPDOWN -->
+<!-- ============================= -->
+<h2>4. Select Dropdown</h2>
+
+<label for="citySelect">Select City:</label>
+<select id="citySelect">
+    <option value="Mumbai">Mumbai</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Bangalore">Bangalore</option>
+</select>
+
+<button onclick="showCity()">Show Selected City</button>
+
+<p id="cityOut"></p>
+
+<script>
+function showCity() {
+    cityOut.innerText = "Selected City: " + citySelect.value;
+}
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 5. FORM VALIDATION -->
+<!-- ============================= -->
+<h2>5. Simple Form Validation</h2>
+
+<form id="valForm">
+    <label for="emailField">Email:</label>
+    <input type="text" id="emailField"><br><br>
+
+    <label for="passField">Password:</label>
+    <input type="password" id="passField"><br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<p id="valMessage"></p>
+
+<script>
+valForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = emailField.value.trim();
+    const pass = passField.value.trim();
+
+    if (email === "" || pass === "") {
+        valMessage.innerText = "All fields are required!";
+        return;
+    }
+
+    valMessage.innerText = "Form Submitted Successfully!";
+});
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 6. RESETTING FORM -->
+<!-- ============================= -->
+<h2>6. Reset Form</h2>
+
+<form id="resetForm">
+    <label for="resetInput">Username:</label>
+    <input type="text" id="resetInput"><br><br>
+
+    <button type="reset">Reset Form</button>
+</form>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 7. ENABLE / DISABLE INPUTS -->
+<!-- ============================= -->
+<h2>7. Enable / Disable Input Fields</h2>
+
+<label for="disInput">Disable/Enable Input:</label>
+<input type="text" id="disInput">
+
+<button onclick="disableIt()">Disable</button>
+<button onclick="enableIt()">Enable</button>
+
+<script>
+function disableIt() { disInput.disabled = true; }
+function enableIt() { disInput.disabled = false; }
+</script>
+
+<hr>
+
+
+<!-- ============================= -->
+<!-- 8. FORM PROPERTIES -->
+<!-- ============================= -->
+<h2>8. Useful Form Properties</h2>
+
+<form id="propForm">
+    <label for="userField">Username:</label>
+    <input id="userField" name="username" value="Dev"><br><br>
+
+    <label for="emailPropField">Email:</label>
+    <input id="emailPropField" name="email" value="test@example.com"><br><br>
+
+    <button type="button" onclick="showProps()">Show Form Properties</button>
+</form>
+
+<p id="propOut"></p>
+
+<script>
+function showProps() {
+    const f = propForm;
+    propOut.innerHTML =
+        "Total Elements: " + f.elements.length + "<br>" +
+        "First Element Value: " + f.elements[0].value + "<br>" +
+        "Second Element Value: " + f.elements[1].value;
+}
+</script>
+
+<hr>
+
+<h2>All Important DOM Form Concepts Covered ✔ With Labels & Viewport!</h2>
+
+</body>
+</html>

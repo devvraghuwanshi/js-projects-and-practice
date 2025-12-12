@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bgChangeBTN{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <h1 id="heading">Background change</h1>
+    <button ondblclick="bgChange()" id="btn">click to change background</button>
+    <script>
+        function bgChange(){
+            let el = document.getElementById("heading");
+            el.classList.add("bgChangeBTN");
+        }
+    </script>
+</body>
+</html>

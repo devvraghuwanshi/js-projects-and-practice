@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .myStyle{
+        background-color: black;
+        color: white;
+    }
+    .fontstyle{
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+<body>
+    <h1 class="heading">Hello guys</h1>
+    <script>
+        let el = document.getElementsByClassName("heading")[0];
+        el.classList.add("myStyle","fontstyle");
+        el.classList.remove("fontstyle");
+        let con1 = el.classList.contains("myStyle");
+        let con2 = el.classList.contains("fontstyle");
+        let con3 = el.classList.item(1);
+        console.log(con1);
+        console.log(con2);
+        console.log(con3);
+    </script>
+</body>
+</html>

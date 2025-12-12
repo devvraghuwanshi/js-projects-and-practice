@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fname" placeholder="Type something" oninput="showInput()">
+    <p id="out"></p>
+    <script>
+        function showInput(){
+            document.getElementById("out").innerText = "you typed: " + fname.value;
+        }
+    </script>
+
+</body>
+</html>

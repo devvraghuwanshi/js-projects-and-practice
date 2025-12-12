@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Child Example</title>
+</head>
+<body>
+    <div id="box">
+        <p id="oldPara">This is the old paragraph.</p>
+    </div>
+
+    <script>
+        let parent = document.getElementById("box");  // parent div
+        let oldChild = document.getElementById("oldPara"); // old element
+
+        let newChild = document.createElement("h2");  // new element
+        newChild.textContent = "This is the new replaced heading!";
+
+        parent.replaceChild(newChild, oldChild); // replace old with new
+    </script>
+</body>
+</html>
