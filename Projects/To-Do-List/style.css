@@ -1,0 +1,76 @@
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainHeading{
+    font-family: monospace;
+    color: grey;
+    border-bottom:2px solid cyan;
+}
+
+#enterTask{
+    font-family: monospace;
+    color: black;
+    text-align: center;
+    width: 70vh;
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    color: black;
+    font-family: monospace;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+}
+.btn:hover{
+    background-color: cyan;
+    color: white;
+}
+
+.main{
+
+    width: 50%;
+    height: 70%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.inputBox{
+    display: block;
+}
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+li {
+    padding: 8px;
+    background: white;
+    color: black;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+button.delete {
+    background: cyan;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+button.delete:hover{
+    background-color: white;
+    color: black;
+}
