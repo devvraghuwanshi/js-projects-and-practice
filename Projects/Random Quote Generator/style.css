@@ -1,0 +1,33 @@
+body{
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quoteBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-family: monospace;
+    color: white;
+    font-size: large;
+}
+.btn{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: large;
+    font-family: monospace;
+
+}
+.btn:hover{
+    color: burlywood;
+}
