@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout & setInterval - JS BOM</title>
+</head>
+<body>
+
+<h2>setTimeout & setInterval (Simple Demo)</h2>
+
+<button onclick="startTimeout()">Start setTimeout</button>
+<button onclick="stopTimeout()">Clear Timeout</button>
+
+<br><br>
+
+<button onclick="startInterval()">Start setInterval</button>
+<button onclick="stopInterval()">Clear Interval</button>
+
+<pre id="out"></pre>
+
+<script>
+let timeoutId;
+let intervalId;
+let count = 0;
+
+// setTimeout example
+function startTimeout() {
+    out.textContent = "setTimeout started (wait 3 seconds)";
+    timeoutId = setTimeout(function () {
+        out.textContent = "setTimeout executed!";
+    }, 3000);
+}
+
+// clearTimeout
+function stopTimeout() {
+    clearTimeout(timeoutId);
+    out.textContent = "setTimeout cleared";
+}
+
+// setInterval example
+function startInterval() {
+    count = 0;
+    out.textContent = "setInterval started\n";
+    intervalId = setInterval(function () {
+        count++;
+        out.textContent += "Count : " + count + "\n";
+    }, 1000);
+}
+
+// clearInterval
+function stopInterval() {
+    clearInterval(intervalId);
+    out.textContent += "setInterval stopped";
+}
+</script>
+
+</body>
+</html>

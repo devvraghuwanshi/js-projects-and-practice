@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.navigator - Easy Demo</title>
+</head>
+<body>
+
+<h2>window.navigator</h2>
+
+<button onclick="showNavigator()">Show Navigator Info</button>
+<button onclick="checkOnline()">Check Online Status</button>
+<button onclick="getLocation()">Get Location</button>
+
+<pre id="out"></pre>
+
+<script>
+function showNavigator() {
+    out.textContent =
+"appName        : " + navigator.appName + "\n" +
+"appVersion     : " + navigator.appVersion + "\n" +
+"userAgent      : " + navigator.userAgent + "\n" +
+"platform       : " + navigator.platform + "\n" +
+"language       : " + navigator.language + "\n" +
+"cookieEnabled  : " + navigator.cookieEnabled + "\n" +
+"onLine         : " + navigator.onLine;
+}
+
+function checkOnline() {
+    if (navigator.onLine) {
+        out.textContent = "You are ONLINE";
+    } else {
+        out.textContent = "You are OFFLINE";
+    }
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPos, showErr);
+    } else {
+        out.textContent = "Geolocation not supported";
+    }
+}
+
+function showPos(position) {
+    out.textContent =
+"Latitude  : " + position.coords.latitude + "\n" +
+"Longitude : " + position.coords.longitude;
+}
+
+function showErr(error) {
+    out.textContent = "Location access denied or unavailable";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.history - Easy Demo</title>
+</head>
+<body>
+
+<h2>window.history</h2>
+
+<button onclick="info()">Show History Info</button>
+<button onclick="back()">Back</button>
+<button onclick="forward()">Forward</button>
+<button onclick="go2()">Go Back 2 Pages</button>
+<button onclick="addState()">Add History (pushState)</button>
+<button onclick="replace()">Replace History</button>
+
+<pre id="out"></pre>
+
+<script>
+function info() {
+    out.textContent =
+"Total pages in history : " + history.length + "\n" +
+"Current state          : " + history.state;
+}
+
+function back() {
+    history.back();
+}
+
+function forward() {
+    history.forward();
+}
+
+function go2() {
+    history.go(-2);
+}
+
+function addState() {
+    history.pushState(
+        "New Page",
+        "",
+        "?page=new"
+    );
+    info();
+}
+
+function replace() {
+    history.replaceState(
+        "Replaced Page",
+        "",
+        "?page=replaced"
+    );
+    info();
+}
+
+window.addEventListener("popstate", function (e) {
+    out.textContent =
+"Back/Forward clicked\n" +
+"State : " + e.state;
+});
+</script>
+
+</body>
+</html>

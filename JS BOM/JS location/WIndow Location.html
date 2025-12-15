@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.location - JS BOM</title>
+</head>
+<body>
+
+<h1>window.location</h1>
+
+<button onclick="showLocation()">Show Location Properties</button>
+<button onclick="goHref()">Redirect (href)</button>
+<button onclick="goAssign()">Redirect (assign)</button>
+<button onclick="goReplace()">Redirect (replace)</button>
+<button onclick="reloadPage()">Reload Page</button>
+
+<pre id="output"></pre>
+
+<script>
+function showLocation() {
+    document.getElementById("output").textContent =
+`href      : ${window.location.href}
+protocol  : ${window.location.protocol}
+host      : ${window.location.host}
+hostname  : ${window.location.hostname}
+port      : ${window.location.port}
+pathname  : ${window.location.pathname}
+search    : ${window.location.search}
+hash      : ${window.location.hash}
+origin    : ${window.location.origin}`;
+}
+
+function goHref() {
+    window.location.href = "https://google.com";
+}
+
+function goAssign() {
+    window.location.assign("https://google.com");
+}
+
+function goReplace() {
+    window.location.replace("https://google.com");
+}
+
+function reloadPage() {
+    window.location.reload();
+}
+</script>
+
+</body>
+</html>

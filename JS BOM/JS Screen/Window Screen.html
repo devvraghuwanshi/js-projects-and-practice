@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.screen - Easy Demo</title>
+</head>
+<body>
+
+<h2>window.screen</h2>
+
+<button onclick="showScreen()">Show Screen Info</button>
+<button onclick="showOrientation()">Show Orientation</button>
+
+<pre id="out"></pre>
+
+<script>
+function showScreen() {
+    out.textContent =
+"Screen Width        : " + screen.width + "\n" +
+"Screen Height       : " + screen.height + "\n" +
+"Available Width     : " + screen.availWidth + "\n" +
+"Available Height    : " + screen.availHeight + "\n" +
+"Color Depth         : " + screen.colorDepth + "\n" +
+"Pixel Depth         : " + screen.pixelDepth;
+}
+
+function showOrientation() {
+    if (screen.orientation) {
+        out.textContent =
+"Orientation Type    : " + screen.orientation.type + "\n" +
+"Orientation Angle   : " + screen.orientation.angle;
+    } else {
+        out.textContent = "Screen orientation not supported";
+    }
+}
+</script>
+
+</body>
+</html>

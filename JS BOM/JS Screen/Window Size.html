@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Methods</title>
+</head>
+<body>
+
+<button id="btn1">Open new Window</button>
+<button id="btn2">Close Window</button>
+<button id="btn3">Move To</button>
+<button id="btn4">Move By</button>
+<button id="btn5">Resize To</button>
+<button id="btn6">Resize By</button>
+
+<script>
+    // Window size info
+    console.log(`
+    innerHeight: ${window.innerHeight}
+    outerHeight: ${window.outerHeight}
+    innerWidth: ${window.innerWidth}
+    outerWidth: ${window.outerWidth}
+    `);
+
+    let myWin;
+
+    // open(url, name, specs, replace)
+    document.getElementById("btn1").addEventListener("click", opennew);
+    function opennew() {
+        myWin = window.open(
+            "https://example.com",   // url
+            "_blank",                // name
+            "width=300,height=200,left=100,top=100", // specs
+            false                    // replace
+        );
+    }
+
+    // Close window
+    document.getElementById("btn2").addEventListener("click", closethis);
+    function closethis() {
+        if (myWin) {
+            myWin.close();
+        } else {
+            alert("Open the window first!");
+        }
+    }
+
+    // Move to specific position
+    document.getElementById("btn3").addEventListener("click", moveToWin);
+    function moveToWin() {
+        if (myWin) {
+            myWin.moveTo(200, 100);
+            myWin.focus();
+        }
+    }
+
+    // Move relative to current position
+    document.getElementById("btn4").addEventListener("click", moveByWin);
+    function moveByWin() {
+        if (myWin) {
+            myWin.moveBy(50, 50);
+            myWin.focus();
+        }
+    }
+
+    // Resize to exact size
+    document.getElementById("btn5").addEventListener("click", resizeToWin);
+    function resizeToWin() {
+        if (myWin) {
+            myWin.resizeTo(500, 400);
+            myWin.focus();
+        }
+    }
+
+    // Resize relative to current size
+    document.getElementById("btn6").addEventListener("click", resizeByWin);
+    function resizeByWin() {
+        if (myWin) {
+            myWin.resizeBy(50, 50);
+            myWin.focus();
+        }
+    }
+</script>
+
+</body>
+</html>
