@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS BOM Popups – Only Code</title>
+</head>
+<body>
+
+    <button onclick="showAlert()">Alert</button>
+    <button onclick="showConfirm()">Confirm</button>
+    <button onclick="showPrompt()">Prompt</button>
+    <button onclick="openPopup()">Open Popup</button>
+    <button onclick="openPopupWithSpecs()">Open Popup (Specs)</button>
+    <button onclick="closePopup()">Close Popup</button>
+
+    <script>
+        // ================= ALERT =================
+        function showAlert() {
+            alert("This is an alert popup");
+        }
+
+        // ================= CONFIRM =================
+        function showConfirm() {
+            let result = confirm("Do you want to continue?");
+            if (result) {
+                alert("You clicked OK");
+            } else {
+                alert("You clicked Cancel");
+            }
+        }
+
+        // ================= PROMPT =================
+        function showPrompt() {
+            let name = prompt("Enter your name:", "Guest");
+            if (name !== null) {
+                alert("Hello " + name);
+            } else {
+                alert("Prompt cancelled");
+            }
+        }
+
+        // ================= WINDOW.OPEN =================
+        let popup;
+
+        function openPopup() {
+            popup = window.open();
+            popup.document.write("<h1>Simple Popup Window</h1>");
+        }
+
+        function openPopupWithSpecs() {
+            popup = window.open(
+                "https://example.com",   // url
+                "myPopup",               // name
+                "width=400,height=300,left=200,top=100,resizable=yes,scrollbars=yes"
+            );
+        }
+
+        // ================= WINDOW.CLOSE =================
+        function closePopup() {
+            if (popup && !popup.closed) {
+                popup.close();
+            }
+        }
+
+        // ================= AUTO POPUPS =================
+        // setTimeout popup
+        setTimeout(function () {
+            console.log("Timeout popup simulation");
+        }, 2000);
+
+        // setInterval popup
+        let intervalId = setInterval(function () {
+            console.log("Interval running");
+        }, 3000);
+
+        // stop interval
+        setTimeout(function () {
+            clearInterval(intervalId);
+        }, 10000);
+
+        // ================= BLOCKED POPUP CHECK =================
+        function popupBlockedCheck() {
+            let test = window.open("", "", "width=100,height=100");
+            if (test === null) {
+                alert("Popup blocked");
+            } else {
+                test.close();
+                alert("Popup allowed");
+            }
+        }
+    </script>
+
+</body>
+</html>
