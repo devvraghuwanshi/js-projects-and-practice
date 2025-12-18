@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Error Handling – Complete Guide</title>
+  </head>
+  <body>
+    <h1>JavaScript Error Handling (All in One)</h1>
+
+    <button onclick="basicError()">Basic Error</button>
+    <button onclick="tryCatchExample()">Try Catch</button>
+    <button onclick="customError()">Custom Error</button>
+    <button onclick="finallyExample()">Finally</button>
+    <button onclick="asyncError()">Async Error</button>
+    <button onclick="promiseError()">Promise Error</button>
+
+    <script>
+      //1. TYPES OF ERRORS:
+
+      // ReferenceError
+      // console.log(a);
+
+      // SyntaxError
+      // eval("console.log('hello'");
+
+      // TypeError
+      // let num = 5;
+      // num.toUpperCase();
+
+      // 2. BASIC ERROR (WITHOUT HANDLING)
+      function basicError() {
+        console.log(notDefinedVariable);
+      }
+
+      // 3. TRY - CATCH :
+      function tryCatchExample() {
+        try {
+          console.log(x); // error
+        } catch (error) {
+          console.log("Error caught:");
+          console.log(error.name);
+          console.log(error.message);
+        }
+      }
+
+      // 4. TRY - CATCH - FINALLY:
+      try {
+        let a = 10;
+        let b = 20;
+        console.log(a + b);
+      } catch (e) {
+        console.log("Error occurred");
+      } finally {
+        console.log("This always runs");
+      }
+
+      // 5. THROW (CUSTOM ERROR) :
+      function customError() {
+        let age = 15;
+
+        try {
+          if (age < 18) {
+            throw new Error("Age must be 18 or above");
+          }
+          console.log("Access granted");
+        } catch (e) {
+          console.log(e.message);
+        }
+      }
+
+      // 6. FINALLY BLOCK:
+      function finallyExample() {
+        try {
+          let x = y + 1;
+        } catch (e) {
+          console.log("Caught error");
+        } finally {
+          console.log("Finally block executed");
+        }
+      }
+
+      // 7. ERROR OBJECT PROPERTIEs:
+      try {
+        null.test();
+      } catch (e) {
+        console.log(e.name); // TypeError
+        console.log(e.message); // error message
+        console.log(e.stack); // stack trace
+      }
+
+      //  8. ASYNC / AWAIT ERROR HANDLING
+      async function asyncError() {
+        try {
+          let response = await fetch("https://wrong-url-example.com");
+          let data = await response.json();
+          console.log(data);
+        } catch (e) {
+          console.log("Async error caught");
+          console.log(e.message);
+        }
+      }
+
+      // 9. PROMISE ERROR HANDLING (.catch):
+      function promiseError() {
+        let promise = new Promise((resolve, reject) => {
+          reject("Promise failed");
+        });
+
+        promise
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error))
+          .finally(() => console.log("Promise finished"));
+      }
+
+      // 10. WINDOW GLOBAL ERROR HANDLER:
+      window.onerror = function (message, source, lineno, colno, error) {
+        console.log("Global Error Caught");
+        console.log(message);
+        console.log(source);
+        console.log(lineno, colno);
+      };
+
+      // 11. TRY-CATCH WITH JSON:
+      let json = '{ "name": "Dev" }';
+
+      try {
+        let user = JSON.parse(json);
+        if (!user.age) {
+          throw new Error("Age missing in JSON");
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
+
+      // 12. CUSTOM ERROR CLASS:
+      class ValidationError extends Error {
+        constructor(message) {
+          super(message);
+          this.name = "ValidationError";
+        }
+      }
+
+      try {
+        throw new ValidationError("Invalid input");
+      } catch (e) {
+        console.log(e.name);
+        console.log(e.message);
+      }
+
+      // 13. OPTIONAL CHAINING (PREVENT ERRORS):
+      let user = {};
+      console.log(user?.profile?.email);
+
+      //  14. NULLISH COALESCING
+
+      let username = null;
+      console.log(username ?? "Guest");
+
+      // 15. SAFE FUNCTION EXECUTION
+      function safeRun(fn) {
+        try {
+          fn();
+        } catch (e) {
+          console.log("Safe error:", e.message);
+        }
+      }
+
+      safeRun(() => {
+        console.log(test);
+      });
+    </script>
+  </body>
+</html>

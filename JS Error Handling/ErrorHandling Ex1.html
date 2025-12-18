@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function division(a, b) {
+        try {
+          if (b === 0) {
+            throw new Error("Cannot be divided by 0");
+          }
+          return a / b;
+        } catch (err) {
+          console.log("Caught an error: " + err.message);
+          return null;
+        } finally {
+          console.log("Division attempted!");
+        }
+      }
+
+      let result1 = division(10, 2);
+      let result2 = division(8, 0);
+
+      console.log(result1);
+      console.log(result2);
+    </script>
+  </body>
+</html>
