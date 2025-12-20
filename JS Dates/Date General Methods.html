@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Static method: Date.now() - Returns the current timestamp in milliseconds since Unix epoch (Jan 1, 1970).
+      // Useful for measuring time intervals or creating new Date objects.
+      const currentTime = Date.now(); // e.g., 1734652800000 (milliseconds)
+
+      // Static method: Date.parse() - Parses a date string and returns the timestamp in milliseconds.
+      // Accepts various formats like ISO 8601; returns NaN if invalid.
+      const parsedTime = Date.parse("2025-12-20T00:00:00Z"); // e.g., 1734652800000
+
+      // Static method: Date.UTC() - Creates a timestamp from UTC date components (year, month, etc.).
+      // Month is 0-based; useful for creating dates without timezone issues.
+      const utcTime = Date.UTC(2025, 11, 20, 0, 0, 0); // December 20, 2025, 00:00:00 UTC -> 1734652800000
+
+      // Instance method: toString() - Converts the Date to a human-readable string in local timezone.
+      // Includes day, date, time, and timezone.
+      const date = new Date();
+      const stringRep = date.toString(); // e.g., "Sat Dec 20 2025 12:00:00 GMT+0000 (Coordinated Universal Time)"
+
+      // Instance method: toISOString() - Converts to ISO 8601 string (UTC format).
+      // Always in YYYY-MM-DDTHH:mm:ss.sssZ; useful for APIs and serialization.
+      const isoString = date.toISOString(); // e.g., "2025-12-20T12:00:00.000Z"
+
+      // Instance method: toDateString() - Returns only the date part as a string (local timezone).
+      // Excludes time; good for displaying dates without time.
+      const dateString = date.toDateString(); // e.g., "Sat Dec 20 2025"
+
+      // Instance method: toTimeString() - Returns only the time part as a string (local timezone).
+      // Excludes date; useful for time-only displays.
+      const timeString = date.toTimeString(); // e.g., "12:00:00 GMT+0000 (Coordinated Universal Time)"
+
+      // Instance method: valueOf() - Returns the primitive value (timestamp in milliseconds).
+      // Same as getTime(); used internally for comparisons or arithmetic.
+      const timestamp = date.valueOf(); // e.g., 1734652800000
+    </script>
+  </body>
+</html>

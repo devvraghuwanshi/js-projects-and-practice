@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create a new Date object
+      const date = new Date();
+
+      // setFullYear() - Sets the year (and optionally month and day)
+      date.setFullYear(2025, 0, 15); // Sets to Jan 15, 2025
+      console.log("setFullYear:", date);
+
+      // setMonth() - Sets the month (0-11, where 0 is January)
+      date.setMonth(5); // Sets to June
+      console.log("setMonth:", date);
+
+      // setDate() - Sets the day of the month (1-31)
+      date.setDate(20);
+      console.log("setDate:", date);
+
+      // setHours() - Sets the hour (0-23)
+      date.setHours(14);
+      console.log("setHours:", date);
+
+      // setMinutes() - Sets the minutes (0-59)
+      date.setMinutes(30);
+      console.log("setMinutes:", date);
+
+      // setSeconds() - Sets the seconds (0-59)
+      date.setSeconds(45);
+      console.log("setSeconds:", date);
+
+      // setMilliseconds() - Sets the milliseconds (0-999)
+      date.setMilliseconds(500);
+      console.log("setMilliseconds:", date);
+
+      // setTime() - Sets the date/time using milliseconds since Jan 1, 1970
+      date.setTime(0); // Sets to epoch time
+      console.log("setTime:", date);
+
+      // setUTCFullYear() - Sets year in UTC time
+      date.setUTCFullYear(2024);
+      console.log("setUTCFullYear:", date);
+
+      // setUTCMonth() - Sets month in UTC time
+      date.setUTCMonth(11); // December
+      console.log("setUTCMonth:", date);
+
+      // setUTCDate() - Sets day of month in UTC time
+      date.setUTCDate(25);
+      console.log("setUTCDate:", date);
+
+      // setUTCHours() - Sets hours in UTC time
+      date.setUTCHours(18);
+      console.log("setUTCHours:", date);
+
+      // setUTCMinutes() - Sets minutes in UTC time
+      date.setUTCMinutes(15);
+      console.log("setUTCMinutes:", date);
+
+      // setUTCSeconds() - Sets seconds in UTC time
+      date.setUTCSeconds(30);
+      console.log("setUTCSeconds:", date);
+
+      // setUTCMilliseconds() - Sets milliseconds in UTC time
+      date.setUTCMilliseconds(100);
+      console.log("setUTCMilliseconds:", date);
+    </script>
+  </body>
+</html>
