@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Immediately invoked function Expression
+
+      // Named IIFE
+      (function iife() {
+        console.log("first IIFE");
+      })();
+      // Always apply semicolon after first IIFE if you want two IIFE functions.
+
+      // Unnamed IIFE
+      ((name) => {
+        console.log(`second IIFE ${name}`);
+      })("Dev");
+    </script>
+  </body>
+</html>
