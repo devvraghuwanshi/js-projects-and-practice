@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="one"></li>
+        <li id="two">
+            dev
+            <p></p>
+            <a href=""></a>
+        </li>
+        <li id="three"></li>
+    </ul>
+    <script>
+        let el = document.getElementById("two");
+        let el2 = document.getElementsByTagName("p")[0];
+
+        console.log(el2.nextSibling);
+        console.log(el2.nextElementSibling);
+        console.log(el2.previousSibling);
+        console.log(el2.previousElementSibling);
+    </script>
+</body>
+</html>
