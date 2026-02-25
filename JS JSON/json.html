@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- JSON stands for JavaScript Object Notation -->
+    <!-- JSON is plain text format used for storing and transporting data -->
+    <!-- JSON is used to send , recieve , and store data -->
+    <script>
+      let student = {
+        name: "Rahul Jain",
+        roll_number: 101,
+        course: "BTech CSE",
+      };
+      console.log(student);
+
+      // json.stringify() : converts an JS object into JSON string.
+      let student_json = JSON.stringify(student);
+      console.log(student_json);
+
+      // json.parse() : converts an JSON strings into JS objects.
+      let student_object = JSON.parse(student_json);
+      console.log(student_object);
+    </script>
+  </body>
+</html>
