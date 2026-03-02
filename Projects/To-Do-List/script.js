@@ -1,40 +1,49 @@
-let input = document.getElementById("enterTask");
-let btn = document.getElementsByClassName("btn")[0];
-let list = document.getElementById("taskList");
+let input = document.querySelector("#inputBox");
+let btn = document.querySelector(".btn");
+let tasks = document.querySelector("#list");
 
-btn.addEventListener("click", addTask());
+btn.addEventListener("click", () => {
+  let value = input.value.trim();
 
-input.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    addTask();
-  }
-});
-
-function addTask() {
-  let taskText = input.value.trim();
-
-  if (taskText === "") {
-    alert("Please enter a task");
+  if (value === "") {
+    alert("Please enter task!");
     return;
   }
+
   let li = document.createElement("li");
-  li.textContent = taskText;
 
-  li.addEventListener("click", function () {
-    li.classList.toggle("completed");
+ 
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+
+  let span = document.createElement("span");
+  span.textContent = value;
+
+  
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      span.style.textDecoration = "line-through";
+    } else {
+      span.style.textDecoration = "none";
+    }
   });
-   let del = document.createElement("button");
-   del.textContent = "X";
-   del.className = "delete";
 
-   del.addEventListener("click", function (event) {
-     event.stopPropagation();
-     li.remove();
-   });
+  
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "❌";
+  deleteBtn.style.marginLeft = "10px";
 
-   li.appendChild(del);
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+  });
 
-  taskList.appendChild(li);
+ 
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+
+  tasks.appendChild(li);
 
   input.value = "";
-}
+});
