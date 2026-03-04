@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sessionStorage Example</title>
+</head>
+<body>
+  <h2>Session Storage Demo</h2>
+  <input type="text" id="dataInput" placeholder="Enter something">
+  <button onclick="saveData()">Save</button>
+  <button onclick="getData()">Get</button>
+  <button onclick="removeData()">Remove</button>
+  <button onclick="clearAll()">Clear All</button>
+  <p id="output-1"></p>
+  <p id="output-2"></p>
+
+  <script>
+    function saveData() {
+      let value = document.getElementById("dataInput").value;
+      sessionStorage.setItem("myData", value);
+      sessionStorage.setItem("myData2", value);
+      document.getElementById("output-1").innerText = "Saved: " + value;
+      document.getElementById("output-2").innerText = "Saved: " + value;
+    }
+
+    function getData() {
+      let value = sessionStorage.getItem("myData");
+      document.getElementById("output-1").innerText = value 
+        ? "Retrieved: " + value 
+        : "No data found";
+    }
+
+    function removeData() {
+      sessionStorage.removeItem("myData");
+      document.getElementById("output-1").innerText = "Data removed";
+    }
+
+    function clearAll() {
+      sessionStorage.clear();
+      document.getElementById("output-1").innerText = "All data cleared";
+      document.getElementById("output-2").innerText = "All data cleared";
+    }
+  </script>
+</body>
+</html>
