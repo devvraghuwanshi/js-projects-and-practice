@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(-45deg, #141e30, #243b55, #2c3e50, #000000);
+  background-size: 400% 400%;
+  animation: night 15s ease infinite;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes night {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.navBar {
+  width: 100%;
+  height: 8vh;
+  background-color: #243b55;
+}
+.navBar a {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: xx-large;
+  text-decoration: none;
+  margin: 10px;
+}
+.navBar a:hover {
+  color: cadetblue;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_container {
+  width: 60vw;
+  height: 80vh;
+  margin: auto;
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: 
+  "search search search"
+  ". cityName ."
+  ". icon-1 ."
+  ". temp ."
+  ". condition ."
+  ". humidity ."
+  ". wind .";
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+}
+#search {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  backdrop-filter: blur(10px);
+  outline: none;
+}
+#btn-1{
+padding:10px 22px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+#btn-1:hover{
+transform:scale(1.05);
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+.searchBar{
+    width: 400px;
+    grid-area: search;
+}
+#cityName{
+  color: white;
+  
+  
+  grid-area: cityName;
+}
+#temp{
+  color: white;
+  
+  grid-area: temp;
+}
+#icon{
+ 
+  
+  border: none;
+  grid-area: icon-1;
+}
+#condition{
+  
+  color: white;
+  grid-area: condition;
+}
+#humidity{
+   
+  
+  color: white;
+  grid-area: humidity;
+}
+#wind{
+  
+  
+  color: white;
+  grid-area: wind;
+}
