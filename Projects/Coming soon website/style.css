@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/stars-on-a-clear-and-black-sky-photo.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+  position: relative;
+}
+.content {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  color: white;
+}
+.content h1 {
+  font-size: 64px;
+  color: white;
+  font-weight: 500;
+}
+.content h1 span {
+  color: gray;
+}
+.content button {
+  background-color: transparent;
+  border: 2px solid white;
+  outline: none;
+  padding: 12px 25px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.content button img {
+  width: 15px;
+  margin-left: 10px;
+}
+
+.launch-time {
+  display: flex;
+}
+
+.launch-time div {
+  flex-basis: 100px;
+}
+.launch-time div p {
+  font-size: 60px;
+  margin-bottom: -14px;
+}
+
+.rocket {
+  width: 250px;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  animation: rocket 4s linear infinite;
+}
+
+@keyframes rocket {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 105%;
+    opacity: 1;
+  }
+}
